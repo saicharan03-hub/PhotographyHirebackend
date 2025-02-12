@@ -1,0 +1,81 @@
+###
+GET http://localhost:3006/api/members?unionId=sbs1234&mobile=9959947115
+
+
+###
+POST http://localhost:3006/api/register
+Content-Type: application/json
+
+{
+  "district": "Jagtial",
+  "email": "saicharan@sfbgfhjhm",
+  "mobile": "3456789",
+  "name": "SAICHARAN THOORPATI SCT",
+  "organizationName": "Sri Brother",
+  "password": "saicharan123",
+  "role": "organizer",
+  "typeOfGrapher": "",
+  "unionId": "456gy67u"
+}
+
+
+###
+POST  http://localhost:3006/api/login
+Content-Type: application/json
+
+{
+    "mobile":"9182363802",
+    "password":"12345"
+}
+
+
+###
+GET http://localhost:3006/api/users/grapher
+
+
+###
+POST http://localhost:3006/api/bookings/request
+Content-Type: application/json
+
+{
+    "grapherId":"67aba4e9be98d05970c62a8a",
+    "organizerName":"Sri Brother",
+    "date":"2025-02-12"
+}
+
+###
+GET http://localhost:3006/api/grapher/job-requests?grapherId=67aba53cbe98d05970c62a8b
+
+
+### Job Response API - Accept Job
+POST http://localhost:3006/api/grapher/job-response
+Content-Type: application/json
+grapher-id: 67aba4e9be98d05970c62a8a
+
+{
+    "id": "67ac5d349de799f25e2a0b86",
+    "status": "accepted"
+}
+
+###
+GET http://localhost:3006/api/grapher/bookings
+Content-Type: application/json
+grapher-id: 67aba4e9be98d05970c62a8a
+
+### Fetch booked photographers for an organizer
+GET http://localhost:3006/api/organizer/booked-graphers
+Content-Type: application/json
+organizer-name: "Sri Brother"
+
+
+### Update Photographer's Portfolio and Instagram### Update Grapher Profile
+POST http://localhost:3006/api/grapher/update
+Content-Type: application/json
+
+{
+  "grapherId": "67aba4e9be98d05970c62a8a",
+  "portfolio": "https://myportfolio.com",
+  "instagram":"instagram.com"
+  
+}
+
