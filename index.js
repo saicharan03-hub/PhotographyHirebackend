@@ -23,7 +23,7 @@ const axios = require('axios');
 
 async function callApi() {
   try {
-    const response = await axios.get('https://bookingsapi-wxkr.onrender.com/bookings');
+    const response = await axios.get('https://photographyhirebackend.onrender.com/api/login');
     // console.log('API Response:', response.data);
   } catch (error) {
     console.error('Error calling API:', error);
