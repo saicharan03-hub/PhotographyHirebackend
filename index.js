@@ -270,12 +270,14 @@ app.post('/api/grapher/job-response', async (req, res) => {
 
         const { organizerName, date } = jobRequest;
         console.log(organizerName)
+        
 
         // Find the organizer in the database
-        const organizer = await usersCollectionObj.findOne({ organizationName: organizerName });
+        const organizer = await usersCollectionObj.findOne({ name: organizerName });
         if (!organizer) {
             return res.status(404).json({ message: "Organizer not found" });
         }
+        
 
         if (status === "accepted") {
             // Add booking details to the organizer's data
