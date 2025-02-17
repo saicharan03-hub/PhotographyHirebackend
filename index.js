@@ -292,7 +292,7 @@ app.post('/api/grapher/job-response', async (req, res) => {
                 { $push: { confirmedJobs: { id: new ObjectId(id), date, organizer: organizer.organizationName } } }
             );
         }
-
+        console.log(organizer)
         // Remove the job request from the grapher's list
         await usersCollectionObj.updateOne(
             { _id: new ObjectId(grapherId) },
@@ -344,7 +344,7 @@ app.get('/api/organizer/booked-graphers', async (req, res) => {
 
     try {
         const organizer = await usersCollectionObj.findOne({
-            organizationName: organizerName.replace(/^"|"$/g, ''),
+            name: organizerName.replace(/^"|"$/g, ''),
             role: "organizer"
         });
 
